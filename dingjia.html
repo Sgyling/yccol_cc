@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yccol - 智能代理池解决方案</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #8b5cf6;
+            --accent: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--light);
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .nav-shadow {
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s;
+            background: white;
+            overflow: hidden;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .highlight-card {
+            border: 2px solid var(--primary);
+            position: relative;
+        }
+
+        .highlight-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .discount-banner {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 40px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        .btn-custom {
+            background: var(--primary);
+            color: white!important;
+            padding: 12px 30px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white nav-shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <img src="images/logo.jpg" alt="Yccol" height="40">
+            <span class="ms-2 text-dark">Yccol</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index1.html">首页</a></li>
+                <li class="nav-item"><a class="nav-link" href="index1.html">产品</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">定价</a></li>
+                <li class="nav-item"><a class="nav-link" href="index1.html">联系</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- 定价模块 -->
+<section id="pricing" class="py-5 mt-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-4 fw-bold mb-3">选择您的方案</h2>
+            <p class="text-muted">立即获取智能代理服务</p>
+        </div>
+
+        <!-- 限时优惠 -->
+        <div class="discount-banner text-center">
+            <h4>🎉 限时特惠！2025年5月4日前</h4>
+            <p class="mb-0">包年51折！两年以上五折！永久版仅需1800元</p>
+            <small>（优惠截止后永久版将取消）</small>
+        </div>
+
+        <div class="row g-4">
+            <!-- 免费版 -->
+            <div class="col-lg-3">
+                <div class="pricing-card h-100 p-4">
+                    <h4 class="fw-bold mb-4">免费版</h4>
+                    <div class="mb-4">
+                        <span class="h1 fw-bold">0</span>
+                        <span class="h5 text-muted">元/永久</span>
+                    </div>
+                    <ul class="feature-list list-unstyled mb-4">
+                        <li><i class="fas fa-check text-success me-2"></i>500 IP/次</li>
+                        <li><i class="fas fa-check text-success me-2"></i>HTTP/SOCKS5获取</li>
+                        <li><i class="fas fa-check text-success me-2"></i>基础验证功能</li>
+                        <li><i class="fas fa-check text-success me-2"></i>代码开源</li>
+                    </ul>
+                    <a href="https://github.com/Sgyling/yccol"><button class="btn btn-custom w-100">立即开始</button></a>
+                </div>
+            </div>
+
+            <!-- PRO版 -->
+            <div class="col-lg-3">
+                <div class="pricing-card h-100 p-4 position-relative highlight-card">
+                    
+                    <h4 class="fw-bold mb-4">PRO版</h4>
+                    <div class="highlight-badge">最受欢迎</div>
+                    <div class="mb-4">
+                        <span class="h1 fw-bold">30</span>
+                        <span class="h5 text-muted">元/月</span>
+                    </div>
+                    <ul class="feature-list list-unstyled mb-4">
+                        <li><i class="fas fa-check text-success me-2"></i>1W-3W IP池</li>
+                        <li><i class="fas fa-check text-success me-2"></i>自动环境配置</li>
+                        <li><i class="fas fa-check text-success me-2"></i>双协议验证</li>
+                        <li><i class="fas fa-check text-success me-2"></i>代理中转功能</li>
+                    </ul>
+                    <a href="images/wx.jpg"><button class="btn btn-custom w-100">立即升级</button></a>
+                </div>
+            </div>
+
+            <!-- GUI版 -->
+            <div class="col-lg-3">
+                <div class="pricing-card h-100 p-4">
+                    <h4 class="fw-bold mb-4">GUI版</h4>
+                    <div class="mb-4">
+                        <span class="h1 fw-bold">30</span>
+                        <span class="h5 text-muted">元/月</span>
+                    </div>
+                    <ul class="feature-list list-unstyled mb-4">
+                        <li><i class="fas fa-check text-success me-2"></i>可视化操作界面</li>
+                        <li><i class="fas fa-check text-success me-2"></i>一键去重功能</li>
+                        <li><i class="fas fa-check text-success me-2"></i>实时监控仪表盘</li>
+                        <li><i class="fas fa-check text-success me-2"></i>PRO版全部功能</li>
+                    </ul>
+                    <a href="images/wx.jpg"><button class="btn btn-custom w-100">获取授权</button></a>
+                </div>
+            </div>
+
+            <!-- API版 -->
+            <div class="col-lg-3">
+                <div class="pricing-card h-100 p-4">
+                    <h4 class="fw-bold mb-4">企业版</h4>
+                    <div class="mb-4">
+                        <span class="h1 fw-bold">API定制</span>
+                    </div>
+                    <ul class="feature-list list-unstyled mb-4">
+                        <li><i class="fas fa-check text-success me-2"></i>自定义IP数量</li>
+                        <li><i class="fas fa-check text-success me-2"></i>区域IP筛选</li>
+                        <li><i class="fas fa-check text-success me-2"></i>高级API支持</li>
+                        <li><i class="fas fa-check text-success me-2"></i>专属客户支持</li>
+                    </ul>
+                    <a href="images/wx.jpg"><button class="btn btn-custom w-100">联系销售</button> </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 价格套餐表 -->
+        <div class="mt-5">
+            <h4 class="mb-4 fw-bold">完整价格方案</h4>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>套餐类型</th>
+                            <th>价格</th>
+                            <th>日均成本</th>
+                            <th>节省金额</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>日付套餐</td>
+                            <td>3元/日</td>
+                            <td>3.00元</td>
+                            <td>-</td>
+                        </tr>
+
+                        <tr>
+                            <td>包月套餐</td>
+                            <td>30元/月</td>
+                            <td>1.00元</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>半年套餐</td>
+                            <td>180元</td>
+                            <td>0.99元</td>
+                            <td>90元</td>
+                        </tr>
+                        <tr class="table-warning">
+                            <td>限时包年</td>
+                            <td><del>350元</del> <span class="text-danger fw-bold">180元</span></td>
+                            <td>0.49元</td>
+                            <td>170元</td>
+                        </tr>
+                        <tr>
+                            <td>永久授权</td>
+                            <td><span class="text-success fw-bold">1800元</span></td>
+                            <td>-</td>
+                            <td>终身免费更新</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
