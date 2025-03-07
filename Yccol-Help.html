@@ -279,7 +279,7 @@
                         <td>quantity</td>
                         <td>int</td>
                         <td>可选</td>
-                        <td>获取ip池的数量,需要int类型,无法与accuracy一起使用</td>
+                        <td>获取ip池的数量,需要int类型,无法与accuracy一起使用<br>如area参数为cn,则此参数与accuracy参数可一起使用</td>
                 </tbody>
             </table>
 
@@ -287,12 +287,14 @@
             <div class="code-block">
                 curl "http://api.Yccol.cc:3751/api/users?key=ccc&proxy=http&area=all&accuracy=3"<br>
                 <!-- Authorization: Bearer &lt;your_api_key&gt; -->
-            </div>
+            </div><br>
             <div class="code-block">
                 # 获取未验证的中国代理池ip<br>
                 curl "http://api.Yccol.cc:3751/api/users?key=ccc&proxy=http&area=cn"<br><br>
                 # 获取验证后的中国代理池ip<br>
                 curl "http://api.Yccol.cc:3751/api/users?key=ccc&proxy=http&area=cn&accuracy=1"<br><br>
+                # 获取10个验证后的中国代理池ip<br>
+                curl "http://api.Yccol.cc:3751/api/users?key=ccc&proxy=http&area=cn&accuracy=1&quantity=10"<br><br>
                 # 获取的100个中国代理池ip<br>
                 curl "http://api.Yccol.cc:3751/api/users?key=ccc&proxy=http&area=cn&quantity=100"<br><br>
                 # 获取的1000个全球代理池ip<br>
@@ -315,7 +317,7 @@
             <h2>没有key?体验一下API?</h2><br><br>
             <h4>获取http代理池ip</h4>
             <div class="code-block">
-                curl http://192.168.1.199:3751/api/v2/socks5<br>
+                curl http://192.168.1.199:3751/api/v2/http<br>
                 <!-- Authorization: Bearer &lt;your_api_key&gt; -->
             </div><br>
             <h4>获取socks5代理池ip</h4>
