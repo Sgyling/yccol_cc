@@ -261,13 +261,13 @@
                         <td>proxy</td>
                         <td>enum</td>
                         <td>必需</td>
-                        <td>这是获取代理类型的参数,支持:http / socks5</td>
+                        <td>这是获取代理类型的参数,支持:http / https / socks5 <br>http / https 两种协议,一般情况下使用http即可</td>
                     </tr>
                     <tr>
                         <td>area</td>
                         <td>enum</td>
                         <td>必需</td>
-                        <td>地区参数,目前支持地区:<br>all(全部,支持http和socks5协议),<br>cn(中国,支持协议:http,暂不支持socks5),</td>
+                        <td>地区参数,目前支持地区:<br>all(全部,支持http和socks5协议),<br>cn(中国,支持协议:http,暂不支持socks5),<br>fcn(国外,支持协议:http/https,暂不支持socks5)</td>
                     </tr>
                     <tr>
                         <td>accuracy</td>
@@ -279,7 +279,7 @@
                         <td>quantity</td>
                         <td>int</td>
                         <td>可选</td>
-                        <td>获取ip池的数量,需要int类型,无法与accuracy一起使用<br>如area参数为cn,则此参数与accuracy参数可一起使用</td>
+                        <td>获取ip池的数量,需要int类型,无法与accuracy一起使用<br>如area参数为cn或fcn,则此参数与accuracy参数可一起使用</td>
                 </tbody>
             </table>
 
@@ -317,12 +317,17 @@
             <h2>没有key?体验一下API?</h2><br><br>
             <h4>获取http代理池ip</h4>
             <div class="code-block">
-                curl http://192.168.1.199:3751/api/v2/http<br>
+                curl http://api.yccol.cc:3751/api/v2/http<br>
                 <!-- Authorization: Bearer &lt;your_api_key&gt; -->
             </div><br>
             <h4>获取socks5代理池ip</h4>
             <div class="code-block">
-                curl http://192.168.1.199:3751/api/v2/socks5<br>
+                curl http://api.yccol.cc:3751/api/v2/socks5<br>
+                <!-- Authorization: Bearer &lt;your_api_key&gt; -->
+            </div>
+            <h4>ip定位API</h4>
+            <div class="code-block">
+                curl http://api.yccol.cc:3751/api/v1/ip_dingwei?ip=1.1.1.1<br>
                 <!-- Authorization: Bearer &lt;your_api_key&gt; -->
             </div>
         </div>
